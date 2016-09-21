@@ -6,12 +6,9 @@ package intelligence;
 public class Solution10 {
     public int NumberOf1(int n) {
         int count = 0;
-        int result;
-        if (n >= 0) result = n;
-        else result = n * (-1);
-        while (result != 0) {
-            count += result % 2;
-            result = result / 2;
+        while (n != 0) {
+            ++count;
+            n = n & (n - 1);
         }
         return count;
     }
